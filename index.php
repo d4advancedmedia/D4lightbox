@@ -11,26 +11,28 @@
 */
 
 
+$version = '3.1.6';
+
 //	REGISTER - Javascripts & Styles
 	add_action('wp_enqueue_scripts', 'd4lightbox_scriptnstyle_enqueuer');
 	function d4lightbox_scriptnstyle_enqueuer() {
 			wp_register_script(
-				'd4lightbox-script', // slug
+				'd4lightbox_script', // slug
 				plugins_url( '/js/jquery.prettyPhoto.js' , __FILE__ ), // source file
 				array('jquery'), // dependencies
-				'3.1.6', // version
+				$version, // version
 				true // in footer?
 			);
-			wp_enqueue_script('d4lightbox-script');
+			wp_enqueue_script('d4lightbox_script');
 
 			wp_register_style(
-				'd4lightbox-style', // slug
-				plugins_url( '/css/style.css' , __FILE__ ), // source file
+				'd4lightbox_style', // slug
+				plugins_url( '/css/prettyPhoto.css' , __FILE__ ), // source file
 				false, // dependencies
-				'3.1.6', // version
+				$version, // version
 				'screen' // media
 			);
-			wp_enqueue_style ('d4lightbox-style');
+			wp_enqueue_style ('d4lightbox_style');
 			
 	}
 
