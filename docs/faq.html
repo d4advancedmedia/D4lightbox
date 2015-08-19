@@ -1,0 +1,55 @@
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<title>prettyPhoto documentationStéphane Caron &ndash; No Margin For Errors</title> 
+<meta content="Below you can find the complete documentation for prettyPhoto. If you are having problems with prettyPhoto and need support, please come and ask your" name="description">
+</head>
+<body>
+
+<h1><span>prettyPhoto FAQs</span></h1>
+<p>This page is intended to help you resolve common mistakes that can happen when trying to setup prettyPhoto.</p>
+<p>This is not the documentation, the complete documentation can be found <a href="docs.html">here</a>.</p>
+<p>If you are not able to find an answer to your question(s), please feel free to come on <a href="http://forums.no-margin-for-errors.com/">the forums</a> and ask it, I try to be as responsive as I can.</p>
+<h3>prettyPhoto is not loading, instead the image open in a new page</h3>
+<p>Make sure the <a target="_blank" href="http://jquery.com/">jQuery</a> script is included in the page<br>
+Make sure you initialized prettyPhoto by putting that script before the body closing tag.</p>
+<pre>&lt;script type="text/javascript" charset="utf-8"&gt;
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto();
+	});
+&lt;/script&gt;</pre>
+<h3>prettyPhoto is not working in Internet Explore 6 or higher</h3>
+<p>If you’ve modified the settings, make sure you don’t have any trailing commas. A trailing comma is a comma after the last element of an array.</p>
+<p><strong>Good:</strong></p>
+<pre>&lt;script type="text/javascript" charset="utf-8"&gt;
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({
+			animationSpeed: 'normal', /* fast/slow/normal */
+			opacity: 0.80, /* Value between 0 and 1 */
+			showTitle: true /* true/false */
+		});
+	});
+&lt;/script&gt;</pre>
+<p><strong>Bad:</strong></p>
+<pre>&lt;script type="text/javascript" charset="utf-8"&gt;
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({
+			animationSpeed: 'normal', /* fast/slow/normal */
+			opacity: 0.80, /* Value between 0 and 1 */
+			showTitle: true, /* true/false */
+		});
+	});
+&lt;/script&gt;</pre>
+<h3>I am unable to open a website in an iframe</h3>
+<p>Please note that some website do not allow to be opened in an iframe. Websites such as Twitter and Facebook are know to block that. They do it for security purposes and to make sure their users are not victims of <em>phishing.</em></p>
+<h3>I would like to only have one thumbnail to display a gallery</h3>
+<p>Please take a look at the API <a href="docs.html">documentation</a>.</p>
+<h3>I open input fields into prettyPhoto but cannot click into them.</h3>
+<p>This is because by default prettyPhoto takes over the keyboard to assign custom shortcuts. To make inputs clickable, you need to disable keyboard shortcuts, that can be done with the following setting:</p>
+<pre>&lt;script type="text/javascript" charset="utf-8"&gt;
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({
+			keyboard_shortcuts: false
+		});
+	});
+&lt;/script&gt;</pre>
+	</body>

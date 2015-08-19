@@ -1,0 +1,496 @@
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<title>prettyPhoto documentationStéphane Caron &ndash; No Margin For Errors</title> 
+<meta content="Below you can find the complete documentation for prettyPhoto. If you are having problems with prettyPhoto and need support, please come and ask your" name="description">
+<script src="../js/jquery-1.6.1.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="../css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<script src="../js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
+</head>
+<body>
+
+<article>
+
+<h1><span>prettyPhoto</span></h1>
+<p>prettyPhoto is a jQuery lightbox clone. Not only does it support images, it also support for videos, flash, YouTube, iframes and ajax. It’s a full blown media lightbox.</p>
+<p>It is very easy to setup, yet very flexible if you want to customize it a bit. Plus the script is compatible in every major browser, even IE6.</p>
+<p>It also comes with useful APIs so prettyPhoto can be launched from nearly anywhere (yes, that includes Flash)!</p>
+<p><strong>If you need support with prettyPhoto, first take a look at our <a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/prettyphoto-faqs/">FAQs</a>.<br>
+If you were not able to find an answer, feel free <a href="http://forums.no-margin-for-errors.com/">take a look at our forums</a>.</strong></p>
+<h2>Resources</h2>
+<p><a class="button" href="docs.html" target="_blank">Documentation</a><a class="button" href="/blog/category/tutorial/" target="_blank">Tutorials</a><a class="button" href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/prettyphoto-faqs/">FAQs</a><a class="button" href="http://forums.no-margin-for-errors.com/">Support forums</a></p>
+
+<h2>Copyright</h2>
+<p>prettyPhoto is totally free to use, it is released the GPLv2 (http://www.gnu.org/licenses/gpl-2.0.html) or Creative Commons 2.5 license (http://creativecommons.org/licenses/by/2.5/). Feel free to use the one that suits your needs. You can use it in all you projects even commercial ones as long as you leave the credits at the top intact. Please note that if you plan to make money using prettyPhoto, <a href="#donate">donations are more than welcome</a>.</p>
+<h2>Browser support</h2>
+<p>This plugin has been tested and is known to work in the following browsers</p>
+<ul>
+<li>Firefox 3.0+</li>
+<li>Google Chrome 10.0+</li>
+<li>Internet Explorer 6.0+</li>
+<li>Safari 3.1.1+</li>
+<li>Opera 9+</li>
+</ul>
+<hr>
+<h2>Single Image</h2>
+<div id="single-image-overview" class="content">prettyPhoto can open single images.<br>
+&nbsp;<br>
+To do so, simply:<p></p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the <strong>full size</strong> image.</li>
+</ol>
+<p>&nbsp;</p>
+<p>You can also add a title and a description to your picture:</p>
+<ol>
+<li>To have display a title, add the title into the <strong>ALT</strong> attribute or your thumbnail image.</li>
+<li>To have display a description, add the description into the <strong>TITLE</strong> attribute or your link.</li>
+</ol>
+</div>
+<h4>Single Image Demo</h4>
+<div id="single-image-demo" class="content">
+<ul class="gallery">
+<li><a title="This is the description" href="demoimg/fullscreen/2.jpg" rel="prettyPhoto"><img src="demoimg/t_2.jpg" alt="This is the title" height="50" width="50"></a></li>
+</ul>
+</div>
+<h4>Single Image Code</h4>
+<div id="single-image-code" class="content no-ink">
+<pre><span class="no-ink">&lt;a href="images/fullscreen/2.jpg" rel="prettyPhoto" title="This is the description"&gt;&lt;img src="images/thumbnails/t_2.jpg" width="60" height="60" alt="This is the title" /&gt;&lt;/a&gt;</span></pre>
+</div>
+</div>
+
+<hr>
+
+<h2>Image Gallery</h2>
+<div class="tabs">
+<div id="image-gallery-overview" class="content">To open an image gallery simply:<p></p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it and add your gallery name in square brakets (rel=”prettyPhoto“).</li>
+<li>Change the href of your link so it points to the <strong>full size</strong> image.</li>
+</ol>
+</div>
+<h4>Image Gallery Demo</h4>
+<div  id="image-gallery-demo" class="content">
+<ul class="gallery clearfix">
+<li><a title="You can add caption to pictures." href="demoimg/fullscreen/1.jpg" rel="prettyPhoto[pp_gal]"><img src="demoimg/t_1.jpg" alt="Red round shape" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/2.jpg" rel="prettyPhoto[pp_gal]"><img src="demoimg/t_2.jpg" alt="Nice building" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/3.jpg" rel="prettyPhoto[pp_gal]"><img src="demoimg/t_3.jpg" alt="Fire!" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/4.jpg" rel="prettyPhoto[pp_gal]"><img src="demoimg/t_4.jpg" alt="Rock climbing" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/5.jpg" rel="prettyPhoto[pp_gal]"><img src="demoimg/t_5.jpg" alt="Fly kite, fly!" height="50" width="50"></a></li>
+</ul>
+</div>
+<div id="image-gallery-code" class="content">
+<h4>Image Gallery Code</h4>
+<pre>&lt;a href="images/fullscreen/1.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."&gt;&lt;img src="images/thumbnails/t_1.jpg" width="60" height="60" alt="Red round shape" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/2.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_2.jpg" width="60" height="60" alt="Nice building" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/3.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_3.jpg" width="60" height="60" alt="Fire!" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/4.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_4.jpg" width="60" height="60" alt="Rock climbing" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/5.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_5.jpg" width="60" height="60" alt="Fly kite, fly!" /&gt;&lt;/a&gt;</pre>
+</div>
+</div>
+
+<hr>
+
+	<h2>Slideshow Image Gallery</h2>
+<div class="tabs">
+<div id="slideshow-image-gallery-overview" class="content">To open an image gallery simply:<p></p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it and add your gallery name in square brakets (rel=”prettyPhoto“).</li>
+<li>Change the href of your link so it points to the <strong>full size</strong> image.</li>
+<li>Pass the following settings when you initialize prettyPhoto: $(“a[rel^=’prettyPhoto’]”).prettyPhoto({theme: ‘facebook’,slideshow:5000, autoplay_slideshow:true});</li>
+</ol>
+</div>
+<h4>Slideshow Image Gallery Demo</h4>
+<div id="slideshow-image-gallery-demo" class="content">
+<ul class="gallery slideshow clearfix">
+<li><a title="You can add caption to pictures." href="demoimg/fullscreen/1.jpg" rel="prettyPhoto[pp_gal2]"><img src="demoimg/t_1.jpg" alt="Red round shape" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/2.jpg" rel="prettyPhoto[pp_gal2]"><img src="demoimg/t_2.jpg" alt="Nice building" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/3.jpg" rel="prettyPhoto[pp_gal2]"><img src="demoimg/t_3.jpg" alt="Fire!" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/4.jpg" rel="prettyPhoto[pp_gal2]"><img src="demoimg/t_4.jpg" alt="Rock climbing" height="50" width="50"></a></li>
+<li><a href="demoimg/fullscreen/5.jpg" rel="prettyPhoto[pp_gal2]"><img src="demoimg/t_5.jpg" alt="Fly kite, fly!" height="50" width="50"></a></li>
+</ul>
+</div>
+<h4>Slideshow Image Gallery Code</h4>
+<div id="slideshow-image-gallery-code" class="content">
+<pre>&lt;a href="images/fullscreen/1.jpg" rel="prettyPhoto[pp_gal]" title="You can add caption to pictures."&gt;&lt;img src="images/thumbnails/t_1.jpg" width="60" height="60" alt="Red round shape" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/2.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_2.jpg" width="60" height="60" alt="Nice building" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/3.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_3.jpg" width="60" height="60" alt="Fire!" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/4.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_4.jpg" width="60" height="60" alt="Rock climbing" /&gt;&lt;/a&gt;
+
+&lt;a href="images/fullscreen/5.jpg" rel="prettyPhoto[pp_gal]"&gt;&lt;img src="images/thumbnails/t_5.jpg" width="60" height="60" alt="Fly kite, fly!" /&gt;&lt;/a&gt;</pre>
+</div>
+</div>
+
+
+<h2>Flash content</h2>
+
+<div class="tabs">
+
+<div id="flash-overview" class="content">
+<p>prettyPhoto is also a multimedia lightbox, to open flash content with it simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the <strong>SWF</strong> file.</li>
+<li>Then add the width and height as parameters in your <strong>HREF</strong> (?width=100&amp;height=100).</li>
+<li>In the case your flash needs specifics variables, add &amp;flashvars and add the required parameters.</li>
+</ol>
+</div>
+<h4>Flash content Demo</h4>
+<div id="flash-demo" class="content">
+<ul class="gallery clearfix">
+<li><a title="Flash 10 demo" href="http://www.adobe.com/jp/events/cs3_web_edition_tour/swfs/perform.swf?width=792&amp;height=294" rel="prettyPhoto[flash]"><img src="demoimg/flash-logo.jpg" alt="Flash 10 demo" width="50"></a></li>
+</ul>
+</div>
+
+<h4>Flash content Code</h4>
+<div id="flash-code" class="content">
+<pre>&lt;a href="http://www.adobe.com/products/flashplayer/include/marquee/design.swf?<strong>width=792&amp;amp;height=294</strong>" rel="prettyPhoto[flash]" title="Flash 10 demo"&gt;&lt;img src="images/thumbnails/flash-logo.jpg" alt="Flash 10 demo" width="60" /&gt;&lt;/a&gt;</pre>
+</div>
+</div>
+
+<hr>
+
+
+<h2>YouTube content</h2>
+<div class="tabs">
+
+<div id="youtube-overview" class="content">
+<p>To open YouTube content with it simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the YouTube video page, the same link you would share with friends.</li>
+</ol>
+</div>
+	<h4>YouTube content Demo</h4>
+<div id="youtube-demo" class="content">
+<ul class="gallery clearfix">
+<li><a href="http://www.youtube.com/watch?v=B0ky-VMi9fI" rel="prettyPhoto"><img src="demoimg/flash-logo.jpg" alt="YouTube" width="50"></a></li>
+</ul>
+</div>
+
+<h4>YouTube content Demo</h4>
+<div id="youtube-code" class="content">
+<pre>&lt;a href="http://www.youtube.com/watch?v=qqXi8WmQ_WM" rel="prettyPhoto" title=""&gt;&lt;img src="images/thumbnails/flash-logo.jpg" alt="YouTube" width="60" /&gt;&lt;/a&gt;</pre>
+</div>
+</div>
+
+<hr>
+
+	<h2>Vimeo Content</h2>
+<div class="tabs">
+
+<div id="vimeo-overview" class="content">
+<p>To open Vimeo content with it simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the Vimeo video page, the same link you would share with friends.</li>
+</ol>
+</div>
+	<h4>Vimeo Content DEmo</h4>
+<div id="vimeo-demo" class="content">
+<ul class="gallery clearfix">
+<li><a href="http://vimeo.com/20643420" rel="prettyPhoto"><img src="demoimg/flash-logo.jpg" alt="Vimeo" width="50"></a></li>
+</ul>
+</div>
+<h4>Vimeo Content Code</h4>
+<div id="vimeo-code" class="content">
+<pre>&lt;a href="http://vimeo.com/8245346" rel="prettyPhoto" title=""&gt;&lt;img src="images/thumbnails/flash-logo.jpg" alt="YouTube" width="60" /&gt;&lt;/a&gt;</pre>
+</div>
+</div>
+
+<hr>
+
+	<h2>QuickTime Movies</h2>
+<div class="tabs">
+<div id="quicktime-overview" class="content">
+<p>You can open Quicktime videos with it.</p>
+<p>To do so, simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the <strong>.mov</strong> file.</li>
+<li>Then add the width and height as parameters in your <strong>HREF</strong> (?width=100&amp;height=100).</li>
+</ol>
+</div>
+
+<h4>Quicktime Demo</h4>
+<div id="quicktime-demo" class="content" >
+<ul class="gallery clearfix">
+<li><a title="Despicable Me" href="http://trailers.apple.com/movies/universal/despicableme/despicableme-tlr1_r640s.mov?width=640&amp;height=360" rel="prettyPhoto[movies]"><img src="demoimg/quicktime-logo.png" alt="Despicable Me" width="50"></a></li>
+<li><a title="Tales from Earthsea" href="http://trailers.apple.com/movies/disney/talesfromearthsea/talesfromearthsea-tlr1_r640s.mov?width=640&amp;height=340" rel="prettyPhoto[movies]"><img src="demoimg/quicktime-logo.png" alt="Tales from Earthsea" width="50"></a></li>
+<li><a title="Grease Sing-A-Long" href="http://trailers.apple.com/movies/paramount/greasesingalong/greasesingalong-tlr1_r640s.mov?width=640&amp;height=272" rel="prettyPhoto[movies]"><img src="demoimg/quicktime-logo.png" alt="Grease Sing-A-Long" width="50"></a></li>
+</ul>
+</div>
+
+	<h4>QuickTime Code</h4>
+<div id="quicktime-code" class="content">
+<pre>&lt;a title="Despicable Me" rel="prettyPhoto[movies]" href="http://trailers.apple.com/movies/universal/despicableme/despicableme-tlr1_r640s.mov?<strong>width=640&amp;height=360</strong>"&gt;&lt;img src="demoimg/quicktime-logo.png" alt="Despicable Me" width="50" /&gt;&lt;/a&gt;
+
+&lt;a title="Tales from Earthsea" rel="prettyPhoto[movies]" href="http://trailers.apple.com/movies/disney/talesfromearthsea/talesfromearthsea-tlr1_r640s.mov?<strong>width=640&amp;height=340</strong>"&gt;&lt;img src="demoimg/quicktime-logo.png" alt="Tales from Earthsea" width="50" /&gt;&lt;/a&gt;
+
+&lt;a title="Grease Sing-A-Long" rel="prettyPhoto[movies]" href="http://trailers.apple.com/movies/paramount/greasesingalong/greasesingalong-tlr1_r640s.mov?<strong>width=640&amp;height=272</strong>"&gt;&lt;img src="demoimg/quicktime-logo.png" alt="Grease Sing-A-Long" width="50" /&gt;&lt;/a&gt;</pre>
+</div>
+</div>
+
+
+<hr>
+
+	<h2>Iframe</h2>
+<div class="tabs">
+<div id="iframe-overview" class="content">
+<p>If all the previous options are not enough, you can always open your content inside an iframe.</p>
+<p>To do so, simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the webpage you want to open.</li>
+<li>Then add “?iframe=true” as a parameters in your <strong>HREF</strong> so prettyPhoto knows to open the content in an iframe.</li>
+<li>Then add the width and height as parameters in your <strong>HREF</strong> (&amp;width=100&amp;height=100). Please note that the dimensions can be percent based.</li>
+</ol>
+</div>
+
+	<h4>Iframe Demo</h4>
+<div id="iframe-demo" class="content" style="display: none;">
+<ul class="gallery clearfix">
+<li><a title="Google.com opened at 100%" href="http://www.google.com?iframe=true&amp;width=100%&amp;height=100%" rel="prettyPhoto[iframes]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+<li><a href="http://www.apple.com?iframe=true&amp;width=500&amp;height=250" rel="prettyPhoto[iframes]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+<li><a href="http://www.twitter.com?iframe=true&amp;width=400&amp;height=200" rel="prettyPhoto[iframes]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+</ul>
+</div>
+
+	<h4>Iframe Code</h4>
+<div id="iframe-code" class="content" >
+<pre>&lt;a href="http://www.google.com?iframe=true&amp;width=100%&amp;height=100%" rel="prettyPhoto[iframes]" title="Google.com opened at 100%"&gt;Google.com&lt;/a&gt;
+&lt;a href="http://www.apple.com?iframe=true&amp;width=500&amp;height=250" rel="prettyPhoto[iframes]"&gt;Apple.com&lt;/a&gt;
+&lt;a href="http://www.twitter.com?iframe=true&amp;width=400&amp;height=200" rel="prettyPhoto[iframes]"&gt;Twitter.com&lt;/a&gt;</pre>
+</div>
+</div>
+
+	<h2>Inline</h2>
+<div class="tabs">
+<div id="inline-overview" class="content">
+<p>To open inline content, simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it is the ID of the inline content you want to open with the ID CSS selector (#).</li>
+</ol>
+</div>
+	<h4>Inline Demo</h4>
+<div id="inline-demo" class="content" style="display: none;">
+<ul class="gallery clearfix">
+<li><a href="#inline-1" rel="prettyPhoto[inline]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+<li><a href="#inline-2" rel="prettyPhoto[inline]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+</ul>
+<div id="inline-1" class="hide">
+<p>This is inline content opened in prettyPhoto.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div id="inline-2" class="hide">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+
+	<h4>Inline Code</h4>
+<div id="inline-code" class="content">
+<pre>	&lt;a href="#inline-1" rel="prettyPhoto" &gt;&lt;img src="demoimg/earth-logo.jpg" alt="" width="50" /&gt;&lt;/a&gt;
+	&lt;div id="inline-1" class="hide"&gt;
+		&lt;p&gt;This is inline content opened in prettyPhoto.&lt;/p&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;&lt;/div&gt;
+	&lt;/div&gt;</pre>
+</div>
+</div>
+
+<hr>
+
+	<h2>AJAX Content</h2>
+
+<div class="tabs">
+<div id="ajax-overview" class="content">
+<p>To open ajax content, simply:</p>
+<ol>
+<li>Create a link (&lt;a href=”#”&gt;).</li>
+<li>Add the rel attribute “prettyPhoto” to it (rel=”prettyPhoto”).</li>
+<li>Change the href of your link so it points to the ajax page you want to open.</li>
+<li>Then add “?ajax=true” as a parameters in your <strong>HREF</strong> so prettyPhoto knows to open the content with ajax.</li>
+<li>Then add the width and height as parameters in your <strong>HREF</strong> (&amp;width=100&amp;height=100). Please note that the dimensions can be percent based.</li>
+</ol>
+</div>
+	<h4>AJAX Demo</h4>
+<div id="ajax-demo" class="content">
+<ul class="gallery clearfix">
+<li><a href="xhr_response.html?ajax=true&amp;width=325&amp;height=185" rel="prettyPhoto[ajax]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+</ul>
+</div>
+
+	<h4>AJAX Code</h4>
+<div id="ajax-code" class="content">
+<pre>&lt;a rel="prettyPhoto[ajax]" href="/demos/prettyPhoto-jquery-lightbox-clone/xhr_response.html?ajax=true&amp;width=325&amp;height=185"&gt;Ajax content&lt;/a&gt;</pre>
+</div>
+</div>
+
+<hr>
+
+	<h2>Mixed gallery</h2>
+<div id="quicktime-overview" class="content">
+<ul class="gallery clearfix">
+<li><a href="http://www.google.com?iframe=true&amp;width=600&amp;height=300" rel="prettyPhoto[mixed]"><img src="demoimg/earth-logo.jpg" alt="" width="50"></a></li>
+<li><a title="Despicable Me" href="http://trailers.apple.com/movies/universal/despicableme/despicableme-tlr1_r640s.mov?width=640&amp;height=360" rel="prettyPhoto[mixed]"><img src="demoimg/quicktime-logo.png" alt="Despicable Me" width="50"></a></li>
+<li><a title="Flash 10 demo" href="http://www.adobe.com/products/flashplayer/include/marquee/design.swf?width=792&amp;height=294" rel="prettyPhoto[mixed]"><img src="demoimg/flash-logo.jpg" alt="Flash 10 demo" width="50"></a></li>
+<li><a href="demoimg/fullscreen/5.jpg" rel="prettyPhoto[mixed]"><img src="demoimg/t_5.jpg" alt="Fly kite, fly!" height="50" width="50"></a></li>
+</ul>
+</div>
+</div>
+
+<hr>
+
+<h2>Theme support</h2>
+<p>Choose from one of the five supplied themes.</p>
+<div class="alignleft marginleft" style="width: 310px;">
+<h4>Default theme with the help of <a href="http://www.premiumpixels.com/" target="_blank">Orman Clark</a> and <a href="http://www.kriesi.at/" target="_blank">Christian Budsched (Kriesi)</a>.</h4>
+<p><img class="alignnone size-full wp-image-315" title="facebook" src="demoimg/default.jpg" alt="" height="210" width="300"></p>
+</div>
+<div class="alignleft">
+<h4>Facebook<br>
+inspired theme.</h4>
+<p><img class="alignnone size-full wp-image-315" title="facebook" src="demoimg/facebook.jpg" alt="" height="210" width="300"></p>
+</div>
+<div class="alignleft marginleft">
+<h4>Dark rounded semi-transparent theme.</h4>
+<p><img class="alignnone size-full wp-image-313" title="dark_rounded" src="demoimg/dark_rounded.jpg" alt="" height="210" width="300"></p>
+</div>
+<div class="alignleft">
+<h4>Dark square semi-transparent theme.</h4>
+<p><img class="alignnone size-full wp-image-314" title="dark_square" src="demoimg/dark_square.jpg" alt="" height="210" width="300"></p>
+</div>
+<div class="alignleft marginleft">
+<h4>Light square theme.</h4>
+<p><img class="alignnone size-full wp-image-317" title="light_square" src="demoimg/light_square.jpg" alt="" height="210" width="300"></p>
+</div>
+<div class="alignleft">
+<h4>Light rounded theme.</h4>
+<p><img class="alignnone size-full wp-image-316" title="light_rounded" src="demoimg/light_rounded.jpg" alt="" height="210" width="300"></p>
+</div>
+<h2 id="history">Version history</h2>
+<ul class="noBull">
+<li class="current clearfix"><span class="counter">3.1.6:</span> <span class="description" style="font-weight: normal;"><strong>Fixed:</strong>XSS Fix</span></li>
+<li class="clearfix"><span class="counter">3.1.5:</span> <span class="description" style="font-weight: normal;"><strong>Fixed:</strong>Now works with jQuery 1.9<br>
+<strong>Dropped:</strong> Support for IE6<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.1.4:</span> <span class="description" style="font-weight: normal;"><strong>Fixed:</strong> Bug with Facebook like under IE9<br>
+<strong>Fixed:</strong> Bug with the shebang when liking on Facebook<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.1.3:</span> <span class="description" style="font-weight: normal;"><strong>Added:</strong> support for youtu.be links<br>
+<strong>Fixed:</strong> Minor bug with the facebook like, the url wasn’t correct on the init<br>
+<strong>Fixed:</strong> Bug with social tools when it was turned off<br>
+<strong>Fixed:</strong> Social tools alignment<br>
+<strong>Fixed:</strong> Font color in the default theme<br>
+<strong>Fixed:</strong> Hashtag is now cleared when prettyPhoto is closed<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.1.2:</span> <span class="description" style="font-weight: normal;"><strong>Fixed:</strong> hide_flash setting now works with the new iframe embed code for Vimeo and YouTube<br>
+<strong>Fixed:</strong> It’s now possible to add ?rel=0 to YouTube url to disable related videos at the end of a YouTube video.<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.1.1:</span> <span class="description" style="font-weight: normal;"><strong>Added:</strong> Deeplinking support. You can now share prettyPhoto links<br>
+<strong>Added:</strong> Social sharing tools.<br>
+<strong>Fixed:</strong> IE7 overlay_gallery overlay bug.<br>
+<strong>Fixed:</strong> Bug when opening percent based media then opening normal sized media, the second opened image wouldn’t be resized.<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.1:</span> <span class="description" style="font-weight: normal;"><strong>Added:</strong> Ajax support.<br>
+<strong>Fixed:</strong> Long title would cause the box to jump up a bit.<br>
+<strong>Fixed:</strong> Namespaced scroll event.<br>
+<strong>Fixed:</strong> Browsing throught picture wouldn’t bring you back to the end when clicking previous while being on the first picture.<br>
+<strong>Fixed:</strong> Resize bug.<br>
+<strong>Fixed:</strong> Issue where the inline gallery would cause a preloading of the iframes.<br>
+<strong>Optimized:</strong> Gallery injection script, now 30% faster.<br>
+<strong>Changed:</strong> The YouTube embed code for the new iframe embed.<br>
+<strong>Changed:</strong> Slideshow are now enabled by default.<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.0.3:</span> <span class="description" style="font-weight: normal;"><strong>Fixed:</strong> Double click on the close button causing a bug.<br>
+<strong>Fixed:</strong> prettyPhoto API not being able to handle isSet properly.<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.0.2:</span> <span class="description" style="font-weight: normal;"><strong>Fixed:</strong> The overlay gallery is now only displayed on rollover to resolve issue where it always showed during slideshow<br>
+<strong>Fixed:</strong> Made the filetype check case insensitive<br>
+<strong>Fixed:</strong> Percent based sizes to be independant<br>
+<strong>Fixed:</strong> Issue with trailing characters after the filename<br>
+<strong>Fixed:</strong> An issue when opening big images in inline content<br>
+<strong>Fixed:</strong> Make sure the content never scroll over the top<br>
+<strong>Fixed:</strong> Initial prettyPhoto position<br>
+<strong>Fixed:</strong> Slideshow autoplay when closing – reopening prettyPhoto.<br>
+<strong>Fixed:</strong> Scroll issue in IE<br>
+<strong>Fixed:</strong> Width issue in IE<br>
+<strong>Fixed:</strong> prettyPhoto default size<br>
+<strong>Fixed:</strong> image preloading and image injection code<br>
+<strong>Fixed:</strong> Resize icon behavior<br>
+<strong>Changed:</strong> prettyPhoto now loops through the gallery instead disabling the next arrow on the last item<br>
+<strong>Changed:</strong> Namespaced events to play better with other plugins.<br>
+<strong>Changed:</strong> Keyboard event to only preventDefault on actions used by prettyPhoto<br>
+</span></li>
+<li class="clearfix"><span class="counter">3.0:</span> <span class="description" style="font-weight: normal;"><strong>Added</strong>: Keyboard event bindings as a setting.<br>
+<strong>Added</strong>: Inline galleries.<br>
+<strong>Added</strong>: custom_markup settings. Open anything you want! See this post for a tutorial.<br>
+<strong>Added</strong>: Multiple prettyPhoto with different settings on one page.<br>
+<strong>Added</strong>: Slideshows!<br>
+<strong>Added</strong>: Custom markup support<br>
+<strong>Changed</strong>: Vimeo video now uses their new universal player. <a href="http://vimeo.com/blog:334">http://vimeo.com/blog:334</a><br>
+<strong>Changed</strong>: Default theme, now facebook.<br>
+<strong>Changed</strong>: Default speed, now fast, feel snappier.<br>
+<strong>Fixed</strong>: Vimeo video ID parsing.<br>
+<strong>Fixed</strong>: Double click causing a where prettyPhoto would open without the faded background.<br>
+<strong>Fixed</strong>: Bug when an image would not resize after opening an iframe.<br>
+<strong>Fixed</strong>: Image resizing issues when allow_resize is set to false. Images now center properly.<br>
+<strong>Fixed</strong>: “Image cannot be loaded” message bug. Removed the toLowerCase, a bug I introduced…can’t really say why <img src="http://www.no-margin-for-errors.com/wp-includes/images/smilies/frownie.png" alt=":(" class="wp-smiley" style="height: 1em; max-height: 1em;"><br>
+<strong>Fixed</strong>: API calls now fallback to the IE6 compatible theme</span></li>
+<li class="clearfix"><span class="counter">2.5.6:</span> <span class="description">Fix a bug with the loader icon, fixed a bug where videos would still play when prettyPhoto was closed, fixed a bug when prettyPhoto is re-initialized after an AJAX reload.</span></li>
+<li class="clearfix"><span class="counter">2.5.5:</span> <span class="description">Added wmode as a setting, added vimeo support, added autoplay as a setting, inline content support, new theme (facebook style), markup is now a setting.</span></li>
+<li class="clearfix"><span class="counter">2.5.4:</span> <span class="description">Fix a bug with the bottom nav, fix the theme bug in IE6-7-8</span></li>
+<li class="clearfix"><span class="counter">2.5.3:</span> <span class="description">New settings (hideflash,modal,changepicturecallback). Fixed a resizing issue and an issue where prettyPhoto would open if a user pressed keyboard keys.</span></li>
+<li class="clearfix"><span class="counter">2.5.2:</span> <span class="description">Fixed a bug with the titles/descriptions in the gallery.</span></li>
+<li class="clearfix"><span class="counter">2.5.1:</span> <span class="description">Fixed a bug when not titles/descriptions were provided to the API.</span></li>
+<li class="clearfix"><span class="counter">2.5:</span> <span class="description">Rewrote the code, created APIs, cleaned the CSS a lot, fixed the keyboard navigation.</span></li>
+<li class="clearfix"><span class="counter">2.4.3:</span> <span class="description">Fixed IE6 theme fallback support, fixed iframe parameters issue.</span></li>
+<li class="clearfix"><span class="counter">2.4.2:</span> <span class="description">Implemented <strong>YouTube</strong> support, percent based sizes are now supported, code optimization.</span></li>
+<li class="clearfix"><span class="counter">2.4.1:</span> <span class="description">Mixed galleries are now supported. That means you can have a gallery that contains iframe, flash, images, movies.</span></li>
+<li class="clearfix"><span class="counter">2.4:</span> <span class="description">Added iframe support.</span></li>
+<li class="clearfix"><span class="counter">2.3.3:</span> <span class="description">Added a classid to fix flash in Internet Explorer</span></li>
+<li class="clearfix"><span class="counter">2.3.2:</span> <span class="description">Fixed a bug in single movie/flash opening, made a sprite with the images (faster loading).</span></li>
+<li class="clearfix"><span class="counter">2.3.1:</span> <span class="description">Added callback support</span></li>
+<li class="clearfix"><span class="counter">2.3:</span> <span class="description">Optimized the code, tweaked the design, movie and flash support is back!</span></li>
+<li class="clearfix"><span class="counter">2.2.7:</span> <span class="description">Optimized the code, much faster now.</span></li>
+<li class="clearfix"><span class="counter">2.2.6:</span> <span class="description">Fixed resizing issue.</span></li>
+<li class="clearfix"><span class="counter">2.2.5:</span> <span class="description">Namespaced a missing classname to prevent conflict with wordpress.</span></li>
+<li class="clearfix"><span class="counter">2.2.4:</span> <span class="description">Bug fixes, namespaced the classnames to prevent conflict with wordpress.</span></li>
+<li class="clearfix"><span class="counter">2.2.3:</span> <span class="description">Added themes, reskined the buttons, minor bug fixes</span></li>
+<li class="clearfix"><span class="counter">2.2.2:</span> <span class="description">Added navigation link beside the counter of the gallery. Localized the separator for the counter (1 “of” 2)</span></li>
+<li class="clearfix"><span class="counter">2.2.1:</span> <span class="description">Fixed a bug with the gallery in IE6/IE7. Fixed a bug with the keyboard handling in IE6/IE7</span></li>
+<li class="clearfix"><span class="counter">2.2:</span> <span class="description">Rewrote part of the code, big performance improvement. Images resized can now be expanded. Flash videos can now be opened in prettyPhoto. Keyboard events are now handled.</span></li>
+<li class="clearfix"><span class="counter">2.1.3:</span> <span class="description">Fixed a bug in Opera, opacity can now be changed by modifying the javascript.</span></li>
+<li class="clearfix"><span class="counter">2.1.2:</span> <span class="description">Fixed a bug in IE6 where the select boxes were showing on top of prettyPhoto.</span></li>
+<li class="clearfix"><span class="counter">2.1.1:</span> <span class="description">Descriptions/Titles now support html code, fixed a bug with the resizing not taking the title height into consideration.</span></li>
+<li class="clearfix"><span class="counter">2.1:</span> <span class="description">Added support for titles.</span></li>
+<li class="clearfix"><span class="counter">2.0:</span> <span class="description">Fixed a glitch with the image resizing, redesigned the buttons, tweaked the css, <strong>images bigger than the viewport are now resized</strong>!</span></li>
+<li class="clearfix"><span class="counter">1.2:</span> <span class="description">Fixed a bug with the single image display (previous button was always being displayed).</span></li>
+<li class="clearfix"><span class="counter">1.1:</span> <span class="description">Fixed a bug with the description being cut and a bug with the close button.</span></li>
+<li class="clearfix"><span class="counter">1.0:</span> <span class="description">Initial release of prettyPhoto.</span></li>
+</ul>
+<h2 id="donate">Donations</h2>
+<p>I spend a lot of time to develop/support this script. You like it? Feel free to donate!</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input name="cmd" value="_s-xclick" type="hidden"> <input name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----" type="hidden"> <input name="submit" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" type="image"> <img src="https://www.paypal.com/en_US/i/scr/pixel.gif" alt="" height="1" border="0" width="1">&nbsp;</form>
+</article>

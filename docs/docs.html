@@ -1,0 +1,139 @@
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<title>prettyPhoto documentationStéphane Caron &ndash; No Margin For Errors</title> 
+<meta content="Below you can find the complete documentation for prettyPhoto. If you are having problems with prettyPhoto and need support, please come and ask your" name="description">
+</head>
+<body>
+<h1><span>prettyPhoto documentation</span></h1>
+<p>Below you can find the complete documentation for prettyPhoto.</p>
+<p>If you are having problems with prettyPhoto and <strong>need support</strong>, please come and <a href="http://forums.no-margin-for-errors.com/?CategoryID=2" target="_self">ask your questions in our forums</a>.</p>
+<p>If you got here by mistake, don’t leave! The main prettyPhoto page can be found <a href="/projects/prettyphoto" target="_self">here</a>.</p>
+<p>If you we’re not looking for prettySociable, well too bad, but you can still read my blog <a href="/blog/" target="_self">here</a>.</p>
+
+<a href="http://www.no-margin-for-errors.com/blog/category/tutorial/" target="_blank">[ Tutorials ]</a>
+<article>
+
+
+<h1><span>prettyPhoto documentation</span></h1>
+<p>Below you can find the complete documentation for prettyPhoto.</p>
+<p>If you are having problems with prettyPhoto and <strong>need support</strong>, please come and <a href="http://forums.no-margin-for-errors.com/?CategoryID=2" target="_blank">ask your questions in our forums</a>.</p>
+<p>If you got here by mistake, don’t leave! The main prettyPhoto page can be found <a href="http://www.no-margin-for-errors.com/projects/prettyphoto" target="_blank">here</a>.</p>
+<p>If you we’re not looking for prettySociable, well too bad, but you can still read my blog <a href="http://www.no-margin-for-errors.com/blog/" target="_blank">here</a>.</p>
+
+<h2>Script needed</h2>
+<p>First include the jQuery library, prettyPhoto javascript and the prettyPhoto CSS in the head of the page(s) where you want to use prettyPhoto.</p>
+<pre>&lt;script src="js/jquery.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" /&gt;
+&lt;script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;</pre>
+<p>Then, initialize prettyPhoto. Put the following code before the closing tag of your body ()</p>
+<pre>&lt;script type="text/javascript" charset="utf-8"&gt;
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+&lt;/script&gt;</pre>
+<p>And…you’re set!</p>
+<h2>Hooks</h2>
+<p>Just add rel=”prettyPhoto” to the link you want prettyPhoto to be enabled on. Refer to the <a href="index.html">demos on the main project page</a> for all the possibilities.</p>
+<h2>Customization</h2>
+<p>To customize prettyPhoto, you can pass the following parameters</p>
+<pre>&lt;script type="text/javascript" charset="utf-8"&gt;
+
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({
+			animation_speed: 'fast', /* fast/slow/normal */
+			slideshow: 5000, /* false OR interval time in ms */
+			autoplay_slideshow: false, /* true/false */
+			opacity: 0.80, /* Value between 0 and 1 */
+			show_title: true, /* true/false */
+			allow_resize: true, /* Resize the photos bigger than viewport. true/false */
+			default_width: 500,
+			default_height: 344,
+			counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
+			theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+			horizontal_padding: 20, /* The padding on each side of the picture */
+			hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
+			wmode: 'opaque', /* Set the flash wmode attribute */
+			autoplay: true, /* Automatically start videos: True/False */
+			modal: false, /* If set to true, only the close button will close the window */
+			deeplinking: true, /* Allow prettyPhoto to update the url to enable deeplinking. */
+			overlay_gallery: true, /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+			keyboard_shortcuts: true, /* Set to false if you open forms inside prettyPhoto */
+			changepicturecallback: function(){}, /* Called everytime an item is shown/changed */
+			callback: function(){}, /* Called when prettyPhoto is closed */
+			ie6_fallback: true,
+			markup: '&lt;div class="pp_pic_holder"&gt; \
+						&lt;div class="ppt"&gt;&amp;nbsp;&lt;/div&gt; \
+						&lt;div class="pp_top"&gt; \
+							&lt;div class="pp_left"&gt;&lt;/div&gt; \
+							&lt;div class="pp_middle"&gt;&lt;/div&gt; \
+							&lt;div class="pp_right"&gt;&lt;/div&gt; \
+						&lt;/div&gt; \
+						&lt;div class="pp_content_container"&gt; \
+							&lt;div class="pp_left"&gt; \
+							&lt;div class="pp_right"&gt; \
+								&lt;div class="pp_content"&gt; \
+									&lt;div class="pp_loaderIcon"&gt;&lt;/div&gt; \
+									&lt;div class="pp_fade"&gt; \
+										&lt;a href="#" class="pp_expand" title="Expand the image"&gt;Expand&lt;/a&gt; \
+										&lt;div class="pp_hoverContainer"&gt; \
+											&lt;a class="pp_next" href="#"&gt;next&lt;/a&gt; \
+											&lt;a class="pp_previous" href="#"&gt;previous&lt;/a&gt; \
+										&lt;/div&gt; \
+										&lt;div id="pp_full_res"&gt;&lt;/div&gt; \
+										&lt;div class="pp_details"&gt; \
+											&lt;div class="pp_nav"&gt; \
+												&lt;a href="#" class="pp_arrow_previous"&gt;Previous&lt;/a&gt; \
+												&lt;p class="currentTextHolder"&gt;0/0&lt;/p&gt; \
+												&lt;a href="#" class="pp_arrow_next"&gt;Next&lt;/a&gt; \
+											&lt;/div&gt; \
+											&lt;p class="pp_description"&gt;&lt;/p&gt; \
+											{pp_social} \
+											&lt;a class="pp_close" href="#"&gt;Close&lt;/a&gt; \
+										&lt;/div&gt; \
+									&lt;/div&gt; \
+								&lt;/div&gt; \
+							&lt;/div&gt; \
+							&lt;/div&gt; \
+						&lt;/div&gt; \
+						&lt;div class="pp_bottom"&gt; \
+							&lt;div class="pp_left"&gt;&lt;/div&gt; \
+							&lt;div class="pp_middle"&gt;&lt;/div&gt; \
+							&lt;div class="pp_right"&gt;&lt;/div&gt; \
+						&lt;/div&gt; \
+					&lt;/div&gt; \
+					&lt;div class="pp_overlay"&gt;&lt;/div&gt;',
+			gallery_markup: '&lt;div class="pp_gallery"&gt; \
+								&lt;a href="#" class="pp_arrow_previous"&gt;Previous&lt;/a&gt; \
+								&lt;div&gt; \
+									&lt;ul&gt; \
+										{gallery} \
+									&lt;/ul&gt; \
+								&lt;/div&gt; \
+								&lt;a href="#" class="pp_arrow_next"&gt;Next&lt;/a&gt; \
+							&lt;/div&gt;',
+			image_markup: '&lt;img id="fullResImage" src="{path}" /&gt;',
+			flash_markup: '&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{width}" height="{height}"&gt;&lt;param name="wmode" value="{wmode}" /&gt;&lt;param name="allowfullscreen" value="true" /&gt;&lt;param name="allowscriptaccess" value="always" /&gt;&lt;param name="movie" value="{path}" /&gt;&lt;embed src="{path}" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="{width}" height="{height}" wmode="{wmode}"&gt;&lt;/embed&gt;&lt;/object&gt;',
+			quicktime_markup: '&lt;object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="{height}" width="{width}"&gt;&lt;param name="src" value="{path}"&gt;&lt;param name="autoplay" value="{autoplay}"&gt;&lt;param name="type" value="video/quicktime"&gt;&lt;embed src="{path}" height="{height}" width="{width}" autoplay="{autoplay}" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"&gt;&lt;/embed&gt;&lt;/object&gt;',
+			iframe_markup: '&lt;iframe src ="{path}" width="{width}" height="{height}" frameborder="no"&gt;&lt;/iframe&gt;',
+			inline_markup: '&lt;div class="pp_inline"&gt;{content}&lt;/div&gt;',
+			custom_markup: '',
+			social_tools: '&lt;div class="pp_social"&gt;&lt;div class="twitter"&gt;&lt;a href="http://twitter.com/share" class="twitter-share-button" data-count="none"&gt;Tweet&lt;/a&gt;&lt;script type="text/javascript" src="http://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;&lt;/div&gt;&lt;div class="facebook"&gt;&lt;iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&amp;href='+location.href+'&amp;amp;layout=button_count&amp;amp;show_faces=true&amp;amp;width=500&amp;amp;action=like&amp;amp;font&amp;amp;colorscheme=light&amp;amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:23px;" allowTransparency="true"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;' /* html or false to disable */
+		});
+	});
+&lt;/script&gt;</pre>
+
+<h2>Public API</h2>
+<p>Version 2.5 introduced an easy to use API. You can now open prettyPhoto from anywere.</p>
+<p>The public API functions are the following</p>
+<pre>	$.prettyPhoto.open('images/fullscreen/image.jpg','Title','Description');
+	$.prettyPhoto.changePage('next');
+	$.prettyPhoto.changePage('previous');
+	$.prettyPhoto.close();</pre>
+<p>You can also open galleries using the API, just pass arrays to the open function.</p>
+<pre>api_images = ['images/fullscreen/image1.jpg','images/fullscreen/image2.jpg','images/fullscreen/image3.jpg'];
+api_titles = ['Title 1','Title 2','Title 3'];
+api_descriptions = ['Description 1','Description 2','Description 3']
+$.prettyPhoto.open(api_images,api_titles,api_descriptions);</pre>
+<p>You can now open prettyPhoto from Flash or launch is from anywhere, anytime!</p>
+</article>
+</body>
