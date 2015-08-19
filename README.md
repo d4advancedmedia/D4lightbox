@@ -2,20 +2,27 @@ D4 Lightbox
 ==============
 
 ### How To Install
-	1. Install and Activate plugin
-	2. Add the code below to page
+	- 1. Install and Activate plugin
+	- 2. Add the code below to page
 
-````
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function(){
-    $("a[rel^='prettyPhoto']").prettyPhoto();
-  });
-</script>
-````
-	or add ```$("a[rel^='prettyPhoto']").prettyPhoto();``` to custom.js in 'Skivvy'
-	3. add rel="prettyPhoto" to all links around image. (using the 'portfoliolio' plugin add to the [portfolio] shortcode)
+		````
+		<script type="text/javascript" charset="utf-8">
+		  $(document).ready(function(){
+		    $("a[rel^='prettyPhoto']").prettyPhoto();
+		  });
+		</script>
+		````
+
+	- 2a. or add the following to custom.js in 'Skivvy'
+		```$("a[rel^='prettyPhoto']").prettyPhoto();``` 
+	- 3. add rel="prettyPhoto" to all links around image. (using the 'portfoliolio' plugin add to the [portfolio] shortcode)
 
 
+### TIPS
+	- Trouble with Portfoliolio & image galleries? use:
+	````
+	 rel="prettyPhoto&#91;pp_gal&#93;"
+	````
 
 Credits
 ---------
