@@ -7,26 +7,30 @@ D4 Lightbox
 
 2. Add the code below to page
 
-````
+```
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
     $("a[rel^='prettyPhoto']").prettyPhoto();
   });
 </script>
-````
+```
 
 2a. or add the following to custom.js in 'Skivvy'
-```$("a[rel^='prettyPhoto']").prettyPhoto();``` 
+
+```
+$("a[rel^='prettyPhoto']").prettyPhoto();
+```
 
 3. add rel="prettyPhoto" to all links around image. (using the 'portfoliolio' plugin add to the [portfolio] shortcode)
 
 
 ### TIPS
 
-Trouble adding rel="prettyPhoto[pp_gall]" in shortcodes? Try:
-````
+- Trouble adding rel="prettyPhoto[pp_gall]" in shortcodes? Try:
+
+```
 rel="prettyPhoto&#91;pp_gal&#93;"
-````
+```
 
 Credits
 ---------
