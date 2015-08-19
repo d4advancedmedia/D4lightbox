@@ -1,4 +1,18 @@
+D4 Lightbox
+==============
 
+### How To Install
+	1. Install and Activate plugin
+	2. Add the code below to custom.js
+
+````
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
+````
+	3. add rel="prettyPhoto" to all links around image. (using the 'portfoliolio' plugin add to the [portfolio] shortcode)
 
 
 
