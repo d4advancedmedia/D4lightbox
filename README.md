@@ -3,7 +3,7 @@ D4 Lightbox
 
 ### How To Install
 	1. Install and Activate plugin
-	2. Add the code below to custom.js
+	2. Add the code below to page
 
 ````
 <script type="text/javascript" charset="utf-8">
@@ -12,6 +12,7 @@ D4 Lightbox
   });
 </script>
 ````
+	or add ```$("a[rel^='prettyPhoto']").prettyPhoto();``` to custom.js in 'Skivvy'
 	3. add rel="prettyPhoto" to all links around image. (using the 'portfoliolio' plugin add to the [portfolio] shortcode)
 
 
