@@ -21,6 +21,13 @@ D4 Lightbox
 $("a[rel^='prettyPhoto']").prettyPhoto();
 ```
 
+2b. or if you want it to apply to all WordPress Galleries automagically, add the following to custom.js in 'Skivvy'
+
+````
+$(".gallery-icon a").attr( 'rel', 'prettyPhoto[gallery]');
+$("a[rel^='prettyPhoto']").prettyPhoto();
+````
+
 3. add rel="prettyPhoto" to all links around image. (using the 'portfoliolio' plugin add to the [portfolio] shortcode)
 
 
